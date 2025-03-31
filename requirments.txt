@@ -1,0 +1,7 @@
+python-nmap
+time
+shutil
+google.generativeai 
+logging
+argparse
+colorama 
