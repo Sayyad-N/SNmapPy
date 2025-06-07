@@ -33,6 +33,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 def root_checker():
     if os.geteuid() != 0:
         p("Please ReRun App With sudo Command - Sudo يرجي تشغيل البرنامج من فضلك باستعمال ")
+        exit()
 
 
 # Function to get AI help for package management
