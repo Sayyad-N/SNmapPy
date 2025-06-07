@@ -1,12 +1,18 @@
 # SNmapPy - Network Analysis and WiFi Tool
 
+# New Update V2
+- Added Ai (Arabic)
+- Added in CLI Arabic
+- Added Root-Checker
+- Repleaced Book with DataSheet Simple
+  
 ## Overview
 
 SNmapPy is a Python-based network analysis and WiFi tool designed for ethical hacking and network security assessments. It leverages the `nmap` library to perform various network scans and provides a user-friendly interface for both beginners and experienced users.
 
 **Author:** SayyadN
 
-**Version:** 1.0
+**Version:** 2.0
 
 **Disclaimer:** This tool is for educational purposes only. Use responsibly and ethically.
 
@@ -36,15 +42,10 @@ SNmapPy is a Python-based network analysis and WiFi tool designed for ethical ha
 ### Python Packages
 
 -   `python-nmap`
--   `time`
--   `shutil`
--   `google.generativeai`
--   `logging`
--   `argparse`
+-   `google-genai`
 -   `colorama`
 
-You can install the required Python packages using pip:
+Bro Now Setup.sh in Linux Will Auto Install Nmap and Reqired Libs
 
 ```bash
-pip install python-nmap google-generativeai colorama
-```
+sudo bash setup.sh
