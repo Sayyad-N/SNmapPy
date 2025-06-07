@@ -10,7 +10,7 @@ import time
 import shutil
 #For Skip Modeul Error While ROot (Lib aleardy installed)
 try:
-    import google.generativeai as GenAI
+    from google import genai
     has_GenAI = True
 except ImportError:
     has_GenAI = False
@@ -36,22 +36,34 @@ def root_checker():
         exit()
 
 
-# Function to get AI help for package management
+# استبدل هذا بمفتاح API خاص بك في بيئة آمنة
+API_KEY = "AIzaSyCDXhbDjtMMbKkm0FKGMr3SPAPaQ_aWYBQ"
+
 def ai_help(error_message):
     try:
-        GenAI.configure(api_key="AIzaSyCD9b_cGg1Aw0yI_Awt6ufO80V88OlkdbY")
-        model = GenAI.GenerativeModel("gemini-2.0-flash")
+        # تهيئة المكتبة
+        genai.configure(api_key=API_KEY)
+        model = genai.GenerativeModel("gemini-2.0-flash")
+
         while True:
+            # إرسال الرسالة إلى نموذج الذكاء الاصطناعي
             response = model.generate_content(error_message)
-            user_input = i("You can exit by typing 'exit'. Do you need more help? (Y/N): ").lower()
+            print("\n🔍 رد الذكاء الاصطناعي:")
+            print(response.text)
+
+            # سؤال المستخدم
+            user_input = input("\nتقدر تخرج لما تكتب 'exit'. هل تريد المزيد من المساعدة؟ (Y/N): ").lower()
+
             if user_input in ["exit", "n"]:
+                print("🚪 الخروج من المساعد الذكي.")
                 break
             elif user_input == "y":
-                error_message = i("Please provide more details about the issue: ")
+                error_message = input("🧠 أريد المعرفة عن المشكلة التي ظهرت: ")
             else:
-                p(Fore.RED + "Invalid input, please try again.")
+                print("❌ خطأ في الإدخال، حاول مرة أخرى.")
     except Exception as ex:
-        p(Fore.RED + f"AI help is currently unavailable: {ex}")
+        print("⚠️ الذكاء الاصطناعي غير متوفر حاليًا.")
+        print(f"تفاصيل الخطأ: {ex}")
 
 # --- Utility Functions ---
 def ask_continue(message="Do you want to continue? (Y/N): "):
