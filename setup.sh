@@ -54,7 +54,7 @@ fi
 echo -e "\e[1;32m✅ Python and pip are ready.\e[0m"
 
 # 📦 الحزم المطلوبة
-PY_PACKAGES=("python-nmap" "google-generativeai" "colorama")
+PY_PACKAGES=("python-nmap" "google-genai" "colorama")
 
 ALL_INSTALLED=true
 
